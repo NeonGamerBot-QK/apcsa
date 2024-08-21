@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         try (Scanner user = new Scanner(System.in)) {
+            // print 
             System.out.println("Whats is your first name!");
             String fullname = user.next();
             System.out.println("Hello " + fullname);
