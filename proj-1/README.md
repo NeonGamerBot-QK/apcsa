@@ -1,5 +1,7 @@
 ## Ask user questions
+
 Asks the user:
+
 - fullname (str)
 - birthyear (int)
 - greaterThen1000 (int)
@@ -7,6 +9,7 @@ Asks the user:
 - decimal (int)
 
 Example output:
+
 ```console
 Whats is your first name!
 Hello Neon
