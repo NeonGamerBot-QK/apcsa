@@ -1,5 +1,7 @@
 ## Mad Libs
+
 Ask the user for:
+
 - Good year (int)
 - Bad year (int)
 - Good Percent (int)
