@@ -6,4 +6,3 @@ if they want to it asks them for a question
 
 outputs:
 response
-
