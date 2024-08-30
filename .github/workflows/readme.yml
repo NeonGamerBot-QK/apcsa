@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 name: Build readme's
 
 on:
@@ -19,29 +18,3 @@ jobs:
                 node-version: '20'
         - name: Run tests
           run: node fix_readmes.js
-=======
-name: Build readme's
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: "20"
-      - name: Run tests
-        run: node fix_readmes.js
->>>>>>> refs/remotes/origin/main
