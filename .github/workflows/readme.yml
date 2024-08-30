@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - "readme.template"
+      - "README.template"
       - "projects/**"
 permissions:
   contents: write
