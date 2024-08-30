@@ -8,5 +8,6 @@ const projectsInMd = filesWhichAreDirs.filter(dir => {
 }).map(dir => `- [**${dir}**](./${dir}/README.md)`).join('\n')
 
 fs.writeFileSync('./README.md', fs.readFileSync('./README.template').toString().replace('{content}', projectsInMd))
-
+require('child_process').execSync(`git config --global user.email "zeon@saahild.com"`)
+require('child_process').execSync(`git config --global user.name "Zeon [ACTIONS]"`)
 require('child_process').execSync('git add . && git commit -m "ci(zeon): Update README.md" && git push')
