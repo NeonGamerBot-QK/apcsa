@@ -6,5 +6,6 @@
 This repository contains all my files for my APCS A class.
 
 ### Table of contents:
-
 {contents}
+
+
