@@ -4,9 +4,9 @@ on:
   push:
     branches:
       - main
-    paths: 
-        - 'readme.template'
-        - 'projects/**'
+    paths:
+      - "readme.template"
+      - "projects/**"
 permissions:
   contents: write
 jobs:
