@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 const filesWhichAreDirs = fs
-    .readdirSync("./")
+    .readdirSync("./projects")
     .filter((file) => fs.lstatSync(file).isDirectory());
 
 const projectsInMd = filesWhichAreDirs
