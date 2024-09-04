@@ -25,4 +25,4 @@ jobs:
         with:
           node-version: "20"
       - name: Run tests
-        run: node fix_readmes.js
+        run: node scripts/fix_readmes.js
