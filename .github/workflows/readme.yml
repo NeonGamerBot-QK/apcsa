@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-    # on code related change
+      # on code related change
       - "README.template"
       - "projects/**"
       # on script change
