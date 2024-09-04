@@ -21,12 +21,12 @@ fs.writeFileSync(
       .replace("{contents}", projectsInMd),
 );
 require("child_process").execSync(
-  `cd .. && git config --global user.email "zeon@saahild.com"`,
+  ` git config --global user.email "zeon@saahild.com"`,
 );
 require("child_process").execSync(
-  `cd .. && git config --global user.name "Zeon [ACTIONS]"`,
+  ` git config --global user.name "Zeon [ACTIONS]"`,
 );
-require("child_process").execSync("cd .. && git pull");
+require("child_process").execSync(" git pull");
 require("child_process").execSync(
-  'cd .. && git add . && git commit -m "ci(zeon): Update README.md" && git push -f',
+  ' git add . && git commit -m "ci(zeon): Update README.md" && git push -f',
 );

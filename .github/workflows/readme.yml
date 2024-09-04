@@ -5,8 +5,12 @@ on:
     branches:
       - main
     paths:
+    # on code related change
       - "README.template"
       - "projects/**"
+      # on script change
+      - "scripts/**"
+      - ".github/workflows/readme.yml"
   workflow_dispatch:
 
 permissions:
