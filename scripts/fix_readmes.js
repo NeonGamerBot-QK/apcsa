@@ -31,8 +31,7 @@ try {
   require("child_process").execSync(
     ' git add . && git commit -m "ci(zeon): Update README.md" && git push -f',
   );
-  
 } catch (e) {
-  console.error(e.output[1].toString())
-  process.exit(1)
+  console.error(e.output[1].toString());
+  process.exit(1);
 }
