@@ -10,6 +10,7 @@ This repository contains all my files for my APCS A class.
 
 ### Table of contents:
 
+- [**Magpiev2ActivityStarterCode**](./projects/Magpiev2ActivityStarterCode/README.md)
 - [**eightball**](./projects/eightball/README.md)
 - [**madlibs**](./projects/madlibs/README.md)
 - [**proj-1**](./projects/proj-1/README.md)
