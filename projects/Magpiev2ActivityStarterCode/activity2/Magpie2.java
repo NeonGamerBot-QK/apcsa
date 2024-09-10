@@ -31,10 +31,28 @@ public class Magpie2
     public String getResponse(String statement)
     {
         String response = "";
-        
+        statement = statement.toLowerCase();
         // Your code goes here
-        
-        response = getRandomResponse();
+if(statement.contains("math") || statement.contains("science")) {
+    response = "Is that your favorite class?";
+}   else if (statement.toLowerCase().contains(("kcd")) || statement.contains("kentucky country day")) 
+{
+    // anything i said here cant be used against me
+response = "Wow KCD is the best!";
+}else if ("whoami".equals(statement)) {
+response = "Great question! IDK";
+} else if ("whoareu".equals(statement)) {
+response = "Im a non-ai chatbot!";
+} else if (statement.contains("mysite")) {
+response = "I dont have a site yet!";
+ } else if (statement.contains("program")) {
+response = "I was programmed in java!";
+ } else if (statement.contains("java")) {
+response = "Java is a great language! thats also the langauge i was made in";
+ }
+else {
+    response = getRandomResponse();
+}     
        
         return response;
     }
@@ -49,7 +67,7 @@ public class Magpie2
         double r = Math.random();
         int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
         String response = "";
-
+        
         if (whichResponse == 0)
         {
             response = "Interesting, tell me more.";
