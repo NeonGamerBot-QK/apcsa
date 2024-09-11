@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -6,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -47,6 +49,7 @@ public class MagpieGUIRunner2 {
       "--------------Welcome to Magpie Chatbot ------------------\nMagpie: " +
       magpie.getGreeting()
     );
+    chatTextArea.setBackground(Color.gray);
     chatTextArea.setEditable(false);
     scroll = new JScrollPane(chatTextArea);
     scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
@@ -86,6 +89,7 @@ public class MagpieGUIRunner2 {
     mainPanel = new JPanel();
     fillLayout();
 
+    frame.setBackground(Color.black);
     frame.add(mainPanel);
     frame.pack();
     frame.setVisible(true);
