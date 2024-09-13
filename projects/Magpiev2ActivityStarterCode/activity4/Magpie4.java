@@ -38,6 +38,8 @@ public class Magpie4
         if (findKeyword(statement, "I want to", 0) >= 0)
         {
             response = transformIWantToStatement(statement);
+        }  else if (findKeyword(statement, "i want", 0) >= 0) {
+            response = transformIWantToStatement2(statement);
         }
 
         else
@@ -77,7 +79,9 @@ public class Magpie4
         {
             response = transformIWantToStatement(statement); // Concatenate a custom response here
         }
-
+        else if (findKeyword(statement, "i want", 0) >= 0) {
+            response = transformIWantStatement2(statement);
+        }
         else
         {
             // Look for a two word (you <something> me)
@@ -107,7 +111,11 @@ public class Magpie4
         // Your code goes here
         return transformIWantToStatement(statement); // Modify this statement to return the correct String
     }
-
+    private String transformIWantStatement2(String statement)
+    {
+        // Your code goes here
+        return transformIWantToStatement2(statement); // Modify this statement to return the correct String
+    }
      /**
      * Take a statement with "Would you like to <something> with me?" and transform it into 
      * "When would you like me to <something> with you?"
@@ -117,8 +125,15 @@ public class Magpie4
     private String transformWouldYouLikeStatement(String statement)
     {
         // Your code goes here
-        
-        return ""; // Modify this statement to return the correct String
+        statement = statement.trim();
+        String lastChar = statement.substring(statement.length() - 1);
+        if (lastChar.equals("."))
+        {
+            statement = statement.substring(0, statement.length() - 1);
+        }
+        int psn = findKeyword (statement, "Would you like to ", 0);
+        String restOfStatement = statement.substring(psn + 9).trim();
+        return "When would you like me to " + restOfStatement + " with you?";
     }
     
     /**
@@ -136,9 +151,22 @@ public class Magpie4
         {
             statement = statement.substring(0, statement.length() - 1);
         }
-        int psn = findKeyword (statement, "I want to", 0);
+        int psn = findKeyword (statement, "I want", 0);
         String restOfStatement = statement.substring(psn + 9).trim();
         return "What would it mean to " + restOfStatement + "?";
+    }
+    private String transformIWantToStatement2(String statement)
+    {
+        //  Remove the final period, if there is one
+        statement = statement.trim();
+        String lastChar = statement.substring(statement.length() - 1);
+        if (lastChar.equals("."))
+        {
+            statement = statement.substring(0, statement.length() - 1);
+        }
+        int psn = findKeyword (statement, "I want", 0);
+        String restOfStatement = statement.substring(psn + 9).trim();
+        return "I would like " + restOfStatement + " too!";
     }
 
     /**

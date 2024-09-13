@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -6,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -41,8 +43,10 @@ public class MagpieGUIRunner4
         frame.setPreferredSize(new Dimension(800, 600));
         frame.setTitle("Magpie Chatbot");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
+        frame.setBackground(Color.BLACK);
         chatPanel = new JPanel(new BorderLayout());
+        chatPanel.setBackground(Color.GRAY);
+        chatPanel.setForeground(Color.WHITE);
         chatTextArea = new JTextPane();
         chatTextArea.setText("--------------Welcome to Magpie Chatbot ------------------\nMagpie: " + magpie.getGreeting());
         chatTextArea.setEditable(false);
