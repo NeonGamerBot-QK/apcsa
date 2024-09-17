@@ -20,7 +20,97 @@ public class Magpie4b
     {
         return "Hello, let's talk.";
     }
+    /**
+     * Take a statement with "I want <something>." and transform it into 
+     * "I would like <something> too!"
+     * @param statement the user statement, assumed to contain "I want to"
+     * @return the transformed statement
+     */
+    private String transformIWantStatement(String statement)
+    {
+        // Your code goes here
+        return transformIWantToStatement(statement); // Modify this statement to return the correct String
+    }
+    private String transformIWantStatement2(String statement)
+    {
+        // Your code goes here
+        return transformIWantToStatement2(statement); // Modify this statement to return the correct String
+    }
+     /**
+     * Take a statement with "Would you like to <something> with me?" and transform it into 
+     * "When would you like me to <something> with you?"
+     * @param statement the user statement, assumed to contain "Would you like to" and "with me"
+     * @return the transformed statement
+     */
+    private String transformWouldYouLikeStatement(String statement)
+    {
+        // Your code goes here
+        statement = statement.trim();
+        String lastChar = statement.substring(statement.length() - 1);
+        if (lastChar.equals("."))
+        {
+            statement = statement.substring(0, statement.length() - 1);
+        }
+        int psn = findKeyword (statement, "Would you like to ", 0);
+        String restOfStatement = statement.substring(psn + 9).trim();
+        return "When would you like me to " + restOfStatement + " with you?";
+    }
+    
+    /**
+     * Take a statement with "I want to <something>." and transform it into 
+     * "What would it mean to <something>?"
+     * @param statement the user statement, assumed to contain "I want to"
+     * @return the transformed statement
+     */
+    // private String transformIWantToStatement(String statement)
+    // {
+    //     //  Remove the final period, if there is one
+    //     statement = statement.trim();
+    //     String lastChar = statement.substring(statement.length() - 1);
+    //     if (lastChar.equals("."))
+    //     {
+    //         statement = statement.substring(0, statement.length() - 1);
+    //     }
+    //     int psn = findKeyword (statement, "I want", 0);
+    //     String restOfStatement = statement.substring(psn + 9).trim();
+    //     return "What would it mean to " + restOfStatement + "?";
+    // }
+    private String transformIWantToStatement2(String statement)
+    {
+        //  Remove the final period, if there is one
+        statement = statement.trim();
+        String lastChar = statement.substring(statement.length() - 1);
+        if (lastChar.equals("."))
+        {
+            statement = statement.substring(0, statement.length() - 1);
+        }
+        int psn = findKeyword (statement, "I want", 0);
+        String restOfStatement = statement.substring(psn + 9).trim();
+        return "I would like " + restOfStatement + " too!";
+    }
 
+    /**
+     * Take a statement with "you <something> me" and transform it into 
+     * "What makes you think that I <something> you?"
+     * @param statement the user statement, assumed to contain "you" followed by "me"
+     * @return the transformed statement
+     */
+    private String transformYouMeStatement(String statement)
+    {
+        //  Remove the final period, if there is one
+        statement = statement.trim();
+        String lastChar = statement.substring(statement.length() - 1);
+        if (lastChar.equals("."))
+        {
+            statement = statement.substring(0, statement.length() - 1);
+        }
+
+        int psnOfYou = findKeyword (statement, "you", 0);
+        int psnOfMe = findKeyword (statement, "me", psnOfYou + 3);
+
+        String restOfStatement = statement.substring(psnOfYou + 3, psnOfMe).trim();
+        return "What makes you think that I " + restOfStatement + " you?";
+    }
     /**
      * Gives a response to a user statement
      * 
@@ -34,28 +124,76 @@ public class Magpie4b
         String response = "";
 
         // Activity 4 Code here
-
-        // Responses which require transformations
-        if (findKeyword(statement, "I want to", 0) >= 0)
-        {
-            response = transformIWantToStatement(statement);
-        }
-
-        else
-        {
-            // Look for a two word (you <something> me)
+  // Look for a two word (you <something> me)
             // pattern
             int psn = findKeyword(statement, "you", 0);
 
             if (psn >= 0 && findKeyword(statement, "me", psn) >= 0)
             {
                 response = transformYouMeStatement(statement);
-            }
+            } else   // Responses which require transformations
+            if (findKeyword(statement, "I want to", 0) >= 0)
+            {
+                response = transformIWantToStatement(statement);
+            }  else if (findKeyword(statement, "i want", 0) >= 0) {
+                response = transformIWantToStatement2(statement);
+            } else  // Activity 3 Code here
+            if (statement.contains("math") || statement.contains("science")) {
+                response = "Is that your favorite class?";
+              } else if (
+                statement.toLowerCase().contains(("kcd")) ||
+                statement.contains("kentucky country day")
+              ) {
+                // anything i said here cant be used against me
+                response = "Wow KCD is the best!";
+              } else if ("whoami".equals(statement)) {
+                response = "Great question! IDK";
+              } else if ("whoareu".equals(statement)) {
+                response = "Im a non-ai chatbot!";
+              } else if (statement.contains("mysite")) {
+                response = "I dont have a site yet!";
+              } else if (statement.contains("program")) {
+                response = "I was programmed in java!";
+              } else if (statement.contains("java")) {
+                response =
+                  "Java is a great language! thats also the langauge i was made in";
+              } else if (findKeyword(statement, "I want to", 0) >= 0) {
+                  response = transformIWantToStatement(statement);
+              } else if (findKeyword(statement, "i dont like")>=0) {
+                response = "You said 'I dislike " + statement.substring(12) + "'? What dont you like about it?";
+              } else if (findKeyword(statement, "you dont like")>=0) {
+                response = "You said I dislike " + statement.substring(12) + ". Why would you think that!";
+              }  
             else
             {
                 response = getRandomResponse();
             }
-        }
+            
+            if (statement.contains("dog")) {
+                response = replaceWord(statement, "dog", "cat");
+            }
+      
+        // return response;
+        // Responses which require transformations
+      
+
+
+
+        // else
+        // {
+        //     // Look for a two word (you <something> me)
+        //     // pattern
+        //     int psn = findKeyword(statement, "you", 0);
+
+        //     if (psn >= 0 && findKeyword(statement, "me", psn) >= 0)
+        //     {
+        //         response = transformYouMeStatement(statement);
+        //     }
+        //     else
+        //     {
+        //         response = getRandomResponse();
+        //     }
+        // }
         return response;
 
     }
@@ -112,48 +250,8 @@ public class Magpie4b
     private String replaceWord(String phrase, String oldWord, String newWord)
     {
         // Your code goes here
-        
-        return phrase; // Modify this statement to return the correct String
+        return  phrase.replaceAll(oldWord, newWord); // Modify this statement to return the correct String
     }
-    
-    /**
-     * Take a statement with "I don't like <something>." and transform it into 
-     * "You said 'I dislike <something>'? What don't you like about it?"
-     * @param statement the user statement, assumed to contain "I don't like"
-     * @return the transformed statement
-     */
-    private String transformIDontLikeStatement(String statement)
-    {
-        // Your code goes here
-        
-        return ""; // Modify this statement to return the correct String
-    }
-    
-    /**
-     * Take a statement with "I want <something>." and transform it into 
-     * "I would like <something> too!"
-     * @param statement the user statement, assumed to contain "I want to"
-     * @return the transformed statement
-     */
-    private String transformIWantStatement(String statement)
-    {
-        // Activity 4 Code here
-        return transformIWantToStatement(statement); // Modify this statement to return the correct String
-    }
-    
-    /**
-     * Take a statement with "Would you like to <something> with me?" and transform it into 
-     * "When would you like me to <something> with you?"
-     * @param statement the user statement, assumed to contain "Would you like to" and "with me"
-     * @return the transformed statement
-     */
-    private String transformWouldYouLikeStatement(String statement)
-    {
-        // Activity 4 Code here
-        
-        return ""; // Modify this statement to return the correct String
-    }
-    
     /**
      * Take a statement with "I want to <something>." and transform it into 
      * "What would it mean to <something>?"
@@ -180,22 +278,22 @@ public class Magpie4b
      * @param statement the user statement, assumed to contain "you" followed by "me"
      * @return the transformed statement
      */
-    private String transformYouMeStatement(String statement)
-    {
-        //  Remove the final period, if there is one
-        statement = statement.trim();
-        String lastChar = statement.substring(statement.length() - 1);
-        if (lastChar.equals("."))
-        {
-            statement = statement.substring(0, statement.length() - 1);
-        }
+    // private String transformYouMeStatement(String statement)
+    // {
+    //     //  Remove the final period, if there is one
+    //     statement = statement.trim();
+    //     String lastChar = statement.substring(statement.length() - 1);
+    //     if (lastChar.equals("."))
+    //     {
+    //         statement = statement.substring(0, statement.length() - 1);
+    //     }
 
-        int psnOfYou = findKeyword (statement, "you", 0);
-        int psnOfMe = findKeyword (statement, "me", psnOfYou + 3);
+    //     int psnOfYou = findKeyword (statement, "you", 0);
+    //     int psnOfMe = findKeyword (statement, "me", psnOfYou + 3);
 
-        String restOfStatement = statement.substring(psnOfYou + 3, psnOfMe).trim();
-        return "What makes you think that I " + restOfStatement + " you?";
-    }
+    //     String restOfStatement = statement.substring(psnOfYou + 3, psnOfMe).trim();
+    //     return "What makes you think that I " + restOfStatement + " you?";
+    // }
 
     /**
      * Search for one word in phrase. The search is not case

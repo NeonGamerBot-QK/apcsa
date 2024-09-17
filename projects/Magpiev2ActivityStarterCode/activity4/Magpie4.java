@@ -32,18 +32,11 @@ public class Magpie4
     {
         String response = "";
         
-        // Activity 3 Code here
-        
-        // Responses which require transformations
-        if (findKeyword(statement, "I want to", 0) >= 0)
-        {
-            response = transformIWantToStatement(statement);
-        }  else if (findKeyword(statement, "i want", 0) >= 0) {
-            response = transformIWantToStatement2(statement);
-        }
-
-        else
-        {
+    //    else {
+    //         response = getRandomResponse();
+    //       }
+      
+      
             // Look for a two word (you <something> me)
             // pattern
             int psn = findKeyword(statement, "you", 0);
@@ -51,12 +44,38 @@ public class Magpie4
             if (psn >= 0 && findKeyword(statement, "me", psn) >= 0)
             {
                 response = transformYouMeStatement(statement);
-            }
+            } else   // Responses which require transformations
+            if (findKeyword(statement, "I want to", 0) >= 0)
+            {
+                response = transformIWantToStatement(statement);
+            }  else if (findKeyword(statement, "i want", 0) >= 0) {
+                response = transformIWantToStatement2(statement);
+            } else  // Activity 3 Code here
+            if (statement.contains("math") || statement.contains("science")) {
+                response = "Is that your favorite class?";
+              } else if (
+                statement.toLowerCase().contains(("kcd")) ||
+                statement.contains("kentucky country day")
+              ) {
+                // anything i said here cant be used against me
+                response = "Wow KCD is the best!";
+              } else if ("whoami".equals(statement)) {
+                response = "Great question! IDK";
+              } else if ("whoareu".equals(statement)) {
+                response = "Im a non-ai chatbot!";
+              } else if (statement.contains("mysite")) {
+                response = "I dont have a site yet!";
+              } else if (statement.contains("program")) {
+                response = "I was programmed in java!";
+              } else if (statement.contains("java")) {
+                response =
+                  "Java is a great language! thats also the langauge i was made in";
+              } 
             else
             {
                 response = getRandomResponse();
             }
-        }
+      
         return response;
     }
     
