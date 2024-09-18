@@ -55,7 +55,18 @@ public class Magpie4b
         String restOfStatement = statement.substring(psn + 9).trim();
         return "When would you like me to " + restOfStatement + " with you?";
     }
-    
+        /**
+     * Take a statement with "I don't like <something>." and transform it into 
+     * "You said 'I dislike <something>'? What don't you like about it?"
+     * @param statement the user statement, assumed to contain "I don't like"
+     * @return the transformed statement
+     */
+    private String transformIDontLikeStatement(String statement)
+    {
+        // Your code goes here
+        
+        return "You said 'I dislike " + statement.substring(12) + "'? What dont you like about it?"; // Modify this statement to return the correct String
+    }
     /**
      * Take a statement with "I want to <something>." and transform it into 
      * "What would it mean to <something>?"
@@ -160,7 +171,7 @@ public class Magpie4b
               } else if (findKeyword(statement, "I want to", 0) >= 0) {
                   response = transformIWantToStatement(statement);
               } else if (findKeyword(statement, "i dont like")>=0) {
-                response = "You said 'I dislike " + statement.substring(12) + "'? What dont you like about it?";
+                response = transformIDontLikeStatement(statement);
               } else if (findKeyword(statement, "you dont like")>=0) {
                 response = "You said I dislike " + statement.substring(12) + ". Why would you think that!";
               }  
@@ -171,7 +182,7 @@ public class Magpie4b
             
             if (statement.contains("dog")) {
                 response = replaceWord(statement, "dog", "cat");
-            }
+            } 
       
         // return response;
         // Responses which require transformations
