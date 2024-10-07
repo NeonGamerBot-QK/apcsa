@@ -9,7 +9,7 @@ public class MyProgram {
     Turtle turtle = new Turtle();
     turtle.penColor("red");
     turtle.hide();
-    
+
     // draw your first initial
     turtle.towards(10, 10);
     turtle.backward(25);
@@ -59,10 +59,10 @@ public class MyProgram {
     turtle.right(180);
     turtle.forward(200);
     turtle.down();
-    for(int i = 0; i< 50; i++) {
+    for (int i = 0; i < 50; i++) {
       for (int j = 0; j < 50; j++) {
         float midd = (float) (i + j) / 100;
-        turtle.penColor(Color.getHSBColor((float) i / 5 , midd, (float) j / 20));
+        turtle.penColor(Color.getHSBColor((float) i / 5, midd, (float) j / 20));
         turtle.setDirection(i * 8.5);
         turtle.forward(10);
         turtle.setDirection(j * 9);
@@ -74,11 +74,11 @@ public class MyProgram {
       }
     }
     turtle.show();
-turtle.up();
-turtle.home();
-turtle.down();
-while (1 != 0) {
-  turtle.right(10);
-}
+    turtle.up();
+    turtle.home();
+    turtle.down();
+    while (1 != 0) {
+      turtle.right(10);
+    }
   }
 }
