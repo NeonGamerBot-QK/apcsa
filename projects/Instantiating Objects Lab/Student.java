@@ -1,49 +1,41 @@
-public class Student
-{
+public class Student {
+
   private String name;
   private int grade;
-  
-  public Student()
-  {
+
+  public Student() {
     name = "Unknown";
     grade = -1;
   }
-  
-  public Student(String name)
-  {
+
+  public Student(String name) {
     this.name = name;
     grade = -1;
   }
 
-  public Student(int grade)
-  {
+  public Student(int grade) {
     name = "Unknown";
     this.grade = grade;
   }
-  
-  public Student(String name, int grade)
-  {
+
+  public Student(String name, int grade) {
     this.name = name;
     this.grade = grade;
   }
-  
-  public String getName()
-  {
+
+  public String getName() {
     return name;
   }
-  
-  public int getGrade()
-  {
+
+  public int getGrade() {
     return grade;
   }
-  
-  public void setName(String newName)
-  {
+
+  public void setName(String newName) {
     name = newName;
   }
-  
-  public void nextGrade()
-  {
+
+  public void nextGrade() {
     grade++;
   }
 }
