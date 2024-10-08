@@ -4,12 +4,14 @@
 
 You are going to write code that instantiates objects and calls some methods on those objects.
 This starter code comes with two .java files.
+
 - Student.java
 - StudentFactory.java
 
 You will only write code in the StudentFactory.java file, but the code you write will invoke methods that are defined in the Student.java file.
 
 The Student.java file declares several different constructors. Each one takes a different set of arguments to instantiate an instance of a Student object. You will write code that instantiates Student objects using each of the constructors defined below.
+
 ```
 Student(String name, int grade)
 This constructor takes two arguments and uses them to initialize the name and grade of the student represented by this object.
@@ -24,13 +26,13 @@ Student()
 This constructor does not take any arguments and initializes both the student's name and grade to default values.
 ```
 
-Remember, to initialize an instance of an object you need to use the ```new``` keyword and assign the object to a variable. The type of that variable should match the name of the class that was used to create the object.
+Remember, to initialize an instance of an object you need to use the `new` keyword and assign the object to a variable. The type of that variable should match the name of the class that was used to create the object.
 
 ```
 Student luke = new Student();
 ```
 
-This statement instantiates an instance of a Student object and assigns that object to the variable luke, which is declared as a Student-type variable. If you wanted to pass argument to the constructor, you would put those values inside the parentheses of ```new Student( )```
+This statement instantiates an instance of a Student object and assigns that object to the variable luke, which is declared as a Student-type variable. If you wanted to pass argument to the constructor, you would put those values inside the parentheses of `new Student( )`
 
 ### Part 1: No arguments
 
