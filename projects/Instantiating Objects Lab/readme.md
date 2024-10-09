@@ -44,11 +44,11 @@ The student class has 4 different constructors, that each take a different set o
 4. Use System.out.println to output the student's name (using the variable you just created) to the console.
 
 Test your code. Make sure it compiles and look at what it outputs. The parameterless constructor assigns default values to the name and grade of the Student object. What is the default name of a student?
-> Unknown
-5. Call the getGrade method on the student object you created and store the value in a variable (you can name the variable anything you want, but you have to declare the type of the variable correctly. What type of data would store a student's grade (9, 10, 11, 12))
-6. Use System.out.println to output the students grade.
+
+> Unknown 5. Call the getGrade method on the student object you created and store the value in a variable (you can name the variable anything you want, but you have to declare the type of the variable correctly. What type of data would store a student's grade (9, 10, 11, 12)) 6. Use System.out.println to output the students grade.
 
 Test your code. Make sure it compiles and look at what it outputs. What is the default grade of a student?
+
 > -1
 
 ### Part 2: One Argument
@@ -61,19 +61,17 @@ Write the following code in the main method of StudentFactory.java, after the co
 4. Use System.out.println to output the student's name to the console.
 
 Test your code. What value does the getName method return for this student? Why do you think it returns that value?
-> bart
-5. Call the getGrade method on this student and assign it to a variable.
-6. Use System.out.println to output the student's grade to the console.
+
+> bart 5. Call the getGrade method on this student and assign it to a variable. 6. Use System.out.println to output the student's grade to the console.
 
 Test your code. What value does the getGrade method return for this student?
-> 10
-7. Write a statement that instantiates a Student object using the constructor that lets you specify the student's grade. Pass the argument 10 to the constructor by putting that int literal inside the parentheses.
-8. Assign that object to a variable (this should be the 3rd Student variable you have created in this method)
-9. Call the getName method on this student and use System.out.println to output the name to the console.
-10. Call the getGrade method on this student and use System.out.println to output the grade to the console.
+
+> 10 7. Write a statement that instantiates a Student object using the constructor that lets you specify the student's grade. Pass the argument 10 to the constructor by putting that int literal inside the parentheses. 8. Assign that object to a variable (this should be the 3rd Student variable you have created in this method) 9. Call the getName method on this student and use System.out.println to output the name to the console. 10. Call the getGrade method on this student and use System.out.println to output the grade to the console.
 
 Test your code. What values are returned by the getName and getGrade methods for this student?
+
 > bart, 10
+
 ### Part 3: Two Arguments
 
 Write this code in the main method of the StudentFactory.java file, after the code you wrote for Parts 1 and 2.
