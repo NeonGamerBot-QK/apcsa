@@ -12,16 +12,16 @@ public class Radio {
     this.isOnAM = false;
   }
 
-  public double  getFrequency() {
-   if(this.isOnAM) {
-    return (int) this.frequency;
-   } else {
-    return this.frequency;
-   }
+  public double getFrequency() {
+    if (this.isOnAM) {
+      return (int) this.frequency;
+    } else {
+      return this.frequency;
+    }
   }
 
-  public void setFrequency(double  frequency) {
-    if(this.isOnAM) {
+  public void setFrequency(double frequency) {
+    if (this.isOnAM) {
       this.frequency = (int) frequency;
     } else {
       this.frequency = frequency;
@@ -31,26 +31,31 @@ public class Radio {
   public boolean isOnAM() {
     return isOnAM;
   }
-public void nextStation() {
-  if(this.isOnAM) {
-    setFrequency(getFrequency() + 10);
-  } else {
-    setFrequency(getFrequency() + 0.2);
+
+  public void nextStation() {
+    if (this.isOnAM) {
+      setFrequency(getFrequency() + 10);
+    } else {
+      setFrequency(getFrequency() + 0.2);
+    }
   }
-}
-public void prevStation() {
-  if(this.isOnAM) {
-    setFrequency(getFrequency() - 10);
-  } else {
-    setFrequency(getFrequency() - 0.2);
+
+  public void prevStation() {
+    if (this.isOnAM) {
+      setFrequency(getFrequency() - 10);
+    } else {
+      setFrequency(getFrequency() - 0.2);
+    }
   }
-}
+
   public void setOnAM(boolean isOnAM) {
     this.isOnAM = isOnAM;
   }
+
   public void toggleAM() {
     this.isOnAM = !isOnAM;
   }
+
   public void turnDial(int change) {
     if (isOnAM) {
       frequency += change;
