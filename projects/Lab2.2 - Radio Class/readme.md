@@ -24,15 +24,16 @@ Declare an instance variable in the Radio class to represent the frequency that 
 
 Decate an instance variable in the Radio class that represent if the radio is on AM or FM
 
-- Don't for get to use the ```private``` keyword when declaring this variable!
+- Don't for get to use the `private` keyword when declaring this variable!
 - Do not assign an initial value to an instance variable!
 
 ### Part 3: Constructors
+
 Write a default constructor
+
 - make sure to set all instance variables
 
 Write a constructor that takes in if the radio starts on AM or FM
-
 
 Make sure your code compiles. You can't test it until you write the method from Part 4, but it should compile without any errors.
 
@@ -46,7 +47,6 @@ Make sure your code compiles.
 
 Test this code in the RadioTester.java file.
 
-
 ### Part 5: Writing a Setter Method
 
 Write a method to set that station to a specific number.It takes one parameter and returns nothing.
@@ -58,7 +58,8 @@ Once you have written this method, make sure your code compiles.
 Test this code in the RadioTester.java file.
 
 ### Part 6: Mutator Method
-Write a mutator method that does not return anything but takes one parameter. The parameter should be the quanity you want to change the station by.  
+
+Write a mutator method that does not return anything but takes one parameter. The parameter should be the quanity you want to change the station by.
 
 For example if you are on 94.3 and I want to change it by 1.2 then the frequency would not by 95.5
 
@@ -68,14 +69,14 @@ Make sure your code compiles.
 
 Test this code in the RadioTester.java file.
 
-
 ### Part 7: More Mutator Methods
 
-Write two more mutator methods ```nextStation``` and ```prevStation```. 
-These methods should add (or subtract) the value 0.2 from the instance variable if the radio is on FM 
+Write two more mutator methods `nextStation` and `prevStation`.
+These methods should add (or subtract) the value 0.2 from the instance variable if the radio is on FM
 but if the radio is on AM then it should add or subtract 10.
 
 Test this code in the RadioTester.java file.
 
 ### Are you getting weird numbers in your output?
+
 Watch this video: [https://www.youtube.com/watch?v=PZRI1IfStY0](https://www.youtube.com/watch?v=PZRI1IfStY0)
