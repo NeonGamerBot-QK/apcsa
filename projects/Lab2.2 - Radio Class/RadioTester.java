@@ -1,4 +1,3 @@
-import com.saahild.Radio;
 
 public class RadioTester {
 
@@ -9,5 +8,6 @@ public class RadioTester {
     System.out.println(radio.getFrequency());
     System.out.println(radio.isOnAM());
     radio.turnDial(10);
+    System.out.println(radio.getFrequency());
   }
 }
