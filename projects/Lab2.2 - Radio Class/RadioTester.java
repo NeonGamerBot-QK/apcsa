@@ -1,9 +1,8 @@
 import com.saahild.Radio;
 
-public class RadioTester
-{
-  public static void main(String[] args)
-  {
+public class RadioTester {
+
+  public static void main(String[] args) {
     Radio radio = new Radio();
     radio.setFrequency(100);
     radio.setOnAM(true);
@@ -12,4 +11,3 @@ public class RadioTester
     radio.turnDial(10);
   }
 }
-  
