@@ -3,55 +3,56 @@ package com.saahild.bedroom.components;
 import com.saahild.bedroom.util.PillowCovers;
 
 public class Pillow {
-    private Boolean fluffed ;
-    private int rotateAngle;
-    private PillowCovers cover;
 
-    public Pillow(Boolean pfluf, int protateAngle) {
-        rotateAngle = protateAngle;
-        fluffed = pfluf;
-        cover = PillowCovers.FLUFFY_COVER;
-    }
+  private Boolean fluffed;
+  private int rotateAngle;
+  private PillowCovers cover;
 
-    public Pillow() {
-        fluffed = true;
-        rotateAngle = 95;
-        cover = PillowCovers.FLUFFY_COVER;
-    }
+  public Pillow(Boolean pfluf, int protateAngle) {
+    rotateAngle = protateAngle;
+    fluffed = pfluf;
+    cover = PillowCovers.FLUFFY_COVER;
+  }
 
-    public int getRotation() {
-        return rotateAngle;
-    }
+  public Pillow() {
+    fluffed = true;
+    rotateAngle = 95;
+    cover = PillowCovers.FLUFFY_COVER;
+  }
 
-    public void rotate(int deg) {
-        rotateAngle += deg;
-    }
+  public int getRotation() {
+    return rotateAngle;
+  }
 
-    public void rotate() {
-        rotate(5);
-    }
+  public void rotate(int deg) {
+    rotateAngle += deg;
+  }
 
-    public Boolean isFluffed() {
-        return fluffed;
-    }
+  public void rotate() {
+    rotate(5);
+  }
 
-    public void fluf() {
-        fluffed = true;
-    }
+  public Boolean isFluffed() {
+    return fluffed;
+  }
 
-    public void unfluf() {
-        fluffed = false;
-    }
+  public void fluf() {
+    fluffed = true;
+  }
 
-    public PillowCovers getCurrentCover() {
-        return cover;
-    }
+  public void unfluf() {
+    fluffed = false;
+  }
 
-    public void changeCover(PillowCovers c) {
-        cover = c;
-    }
+  public PillowCovers getCurrentCover() {
+    return cover;
+  }
 
-    public void resetCover() {
-        cover = PillowCovers.FLUFFY_COVER;
-    }
+  public void changeCover(PillowCovers c) {
+    cover = c;
+  }
+
+  public void resetCover() {
+    cover = PillowCovers.FLUFFY_COVER;
+  }
 }
