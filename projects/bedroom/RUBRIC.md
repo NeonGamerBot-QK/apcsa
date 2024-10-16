@@ -34,23 +34,29 @@ When finished, you will take a picture of your room or just the objects, placing
 Step 1
 
 List the objects you will create
+
 <!-- done -->
+
 1\) \_\_\_\_bed\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 2\) \_\_\_\_\_\_phone\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 <!-- done -->
+
 3\) \_\_\_\_\_\_\_router\_\_\_\_\_\_\_\_\_\_\_\_
 
 4\) \_\_\_\_\_monitor\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 <!-- done -->
+
 5\) \_\_\_\_\_shoes 1\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 <!-- done -->
+
 6\) \_\_\_\_\_\_\_shades\_\_\_\_\_\_\_\_\_\_\_\_
 
 <!-- done -->
+
 7\) \_\_\_\_\_\_\_\_pillow\_\_\_\_\_\_\_\_\_\_\_
 
 Next create a UML diagram for each object. If you end up needing to make a change to a method or add an attribute later, that’s okay, but this should be your guiding document for the rest of the project.
