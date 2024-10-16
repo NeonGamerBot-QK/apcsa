@@ -17,20 +17,32 @@ public class Bedroom {
   public Monitor monitor;
   public Shades shades;
   public Phone phone;
+
   public Bedroom() {
-   initVars();
+    initVars();
   }
-private void initVars() {
-  pillow = new Pillow();
-  bed = new Bed();
-  shoes = new PairOfShoes();
-  router = new Router(true);
-  monitor = new Monitor();
-  shades = new Shades();
-  phone = new Phone(true, false, 100);
-}
+
+  private void initVars() {
+    pillow = new Pillow();
+    bed = new Bed();
+    shoes = new PairOfShoes();
+    router = new Router(true);
+    monitor = new Monitor();
+    shades = new Shades();
+    phone = new Phone(true, false, 100);
+  }
+
   @Override
   public String toString() {
-    return "Bedroom: \n" + bed.toString() + "\n" + pillow.toString() + "\n" + shoes.toString() + "\n" + router.toString();
+    return (
+      "Bedroom: \n" +
+      bed.toString() +
+      "\n" +
+      pillow.toString() +
+      "\n" +
+      shoes.toString() +
+      "\n" +
+      router.toString()
+    );
   }
 }
