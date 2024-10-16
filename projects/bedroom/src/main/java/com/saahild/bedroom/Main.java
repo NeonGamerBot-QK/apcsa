@@ -3,6 +3,7 @@ package com.saahild.bedroom;
 public class Main {
 
   public static void main(String[] args) {
-    System.out.println("Hello world!");
+  Bedroom mybedroom = new Bedroom();
+  System.out.print(mybedroom);
   }
 }
