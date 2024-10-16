@@ -21,9 +21,11 @@ public class PairOfShoes {
     }
     isTidy = true;
   }
- public Shoe[] getShoes() {
+
+  public Shoe[] getShoes() {
     return shoes;
   }
+
   public void untidyShoes() {
     for (Shoe shoe : shoes) {
       shoe.untidyShoes();
