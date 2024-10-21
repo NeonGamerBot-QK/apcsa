@@ -11,6 +11,7 @@ public class Phone {
     isCharging = pcharge;
     battery = pbat;
   }
+
   public Boolean isOn() {
     return isOn;
   }
@@ -38,10 +39,11 @@ public class Phone {
   public int getBattery() {
     return battery;
   }
-/**
- * 
- * @param deg THe amount by which the battery is to be increased
- */
+
+  /**
+   *
+   * @param deg THe amount by which the battery is to be increased
+   */
   public void increaseBattery(int deg) {
     battery += deg;
   }
