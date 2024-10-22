@@ -42,7 +42,13 @@ public class Bedroom {
       "\n" +
       shoes.toString() +
       "\n" +
-      router.toString()
+      router.toString() + 
+      "\n" +
+      monitor.toString() +
+      "\n" +
+      shades.toString() +
+      "\n" +
+      phone.toString()
     );
   }
 }
