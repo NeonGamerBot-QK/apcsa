@@ -26,11 +26,10 @@ public class Main {
     hero.superAttack(raya);
     // raya.attackHero(hero);
     abdul.slashHero(hero);
-    
+
     System.out.println("Hero: " + hero.getHealth());
     System.out.println("Abdul: " + abdul.getHealth());
     System.out.println("Raya: " + raya.getHealth());
     System.out.println("Peter: " + peter.getHealth());
-
   }
 }
