@@ -75,10 +75,11 @@ public class Person {
   public String toString() {
     return "Health: " + health + ", Strength: " + strength;
   }
-/**
- * Check if the person is alive
- * @return Boolean
- */
+
+  /**
+   * Check if the person is alive
+   * @return Boolean
+   */
   public Boolean isAlive() {
     return health > 0;
   }
