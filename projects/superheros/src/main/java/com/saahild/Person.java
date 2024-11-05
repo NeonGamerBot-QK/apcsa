@@ -17,7 +17,7 @@ public class Person {
 
   /**
    * Get the health of the person
-   * @return
+   * @return health of the person
    */
   public int getHealth() {
     return health;
@@ -25,7 +25,7 @@ public class Person {
 
   /**
    * Get the strength of the person
-   * @return
+   * @return int
    */
   public int getStrength() {
     return strength;

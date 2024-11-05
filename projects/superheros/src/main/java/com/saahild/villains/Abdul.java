@@ -40,7 +40,7 @@ public class Abdul extends Person {
 
   /**
    * Get the name of the villain
-   * @return
+   * @return name
    */
   public String getName() {
     return name;

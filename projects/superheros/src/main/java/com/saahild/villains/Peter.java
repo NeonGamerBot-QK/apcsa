@@ -19,6 +19,7 @@ public class Peter extends Person {
 
   /**
    * Rage
+   * 
    */
 
   public void lastStand() {
@@ -35,7 +36,7 @@ public class Peter extends Person {
 
   /**
    * Get the name of the villain
-   * @return
+   * @return name of the villain
    */
   public String getName() {
     return name;
