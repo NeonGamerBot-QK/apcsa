@@ -19,7 +19,7 @@ public class Peter extends Person {
 
   /**
    * Rage
-   * 
+   *
    */
 
   public void lastStand() {
