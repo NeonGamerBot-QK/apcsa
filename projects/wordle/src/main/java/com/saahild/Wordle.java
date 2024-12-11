@@ -101,14 +101,14 @@ public class Wordle {
       run(board, word);
     }
     // }
-    }
-    private static final String FgGreen = "\u001B[32m";
-    private static final String FgYellow = "\u001B[33m";
-    private static final String FgGray = "\u001B[37m";
-    private static final String Reset = "\u001B[0m";
-    // public static void main(String[] args) {
-    //     new Wordle("Tasco").playWordle();
-    // }
+  }
 
+  private static final String FgGreen = "\u001B[32m";
+  private static final String FgYellow = "\u001B[33m";
+  private static final String FgGray = "\u001B[37m";
+  private static final String Reset = "\u001B[0m";
+  // public static void main(String[] args) {
+  //     new Wordle("Tasco").playWordle();
+  // }
 
 }
