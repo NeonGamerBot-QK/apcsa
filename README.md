@@ -22,5 +22,6 @@ This repository contains all my files for my APCS A class.
 - [**superheros**](./projects/superheros/README.md)
 - [**twentyquestions**](./projects/twentyquestions/README.md)
 - [**wordle**](./projects/wordle/README.md)
+- [**wordle-gui**](./projects/wordle-gui/README.md)
 
 ![88x31](https://matdoes.dev/buttons/i/f01eba7fe68df1ca76855ff4c5b1bc9c.gif)
