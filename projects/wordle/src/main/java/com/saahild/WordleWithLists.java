@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-public class t {
+public class WordleWithLists {
     private static final String Reset = "\u001B[0m";
     private static final String Bright = "\u001B[1m";
     private static final String Dim = "\u001B[2m";
@@ -81,7 +81,7 @@ public class t {
         return words;
     }
 
-    private static void playWordle() throws IOException {
+    public static void playWordle() throws IOException {
         System.out.println("Starting wordle...");
         String word = pickRandomWord(getWordList());
         if (System.getenv("REVEAL_WORD") != null) {
@@ -105,9 +105,10 @@ public class t {
         String input = ""; // Initialize the input variable
         System.out.print("Enter your guess: ");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        input = reader.readLine().replaceAll("[^a-zA-Z]+", "").substring(0, Math.min(5, input.length()));
+        input = reader.readLine();
 
-        if (input.length() < 5) {
+        if (input.length() != 5) {
+            System.out.println(input.length());
             System.out.println("Make sure your guess is 5 Characters!");
             run(board, word);
             return;
@@ -132,5 +133,6 @@ public class t {
             }
         }
     }
+  
 }
 
