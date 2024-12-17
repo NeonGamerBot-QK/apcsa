@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
 public class WordleWithLists {
     private static final String Reset = "\u001B[0m";
@@ -56,8 +55,8 @@ public class WordleWithLists {
     }
 
     private static String pickRandomWord(List<String> list) {
-        Random random = new Random();
-        return list.get(random.nextInt(list.size()));
+      
+        return list.get((int) Math.round(list.size() * Math.random()));
     }
 
     private static String colorLetter(String letter, String color) {
