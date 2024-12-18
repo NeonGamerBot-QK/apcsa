@@ -9,10 +9,12 @@ public class Region {
     this.name = name;
     this.image = image;
   }
+
   // Write accessor/get methods for each instance variable that returns it.
   public String getName() {
     return name;
   }
+
   public String getImage() {
     return image;
   }
