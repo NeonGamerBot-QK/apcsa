@@ -4,7 +4,6 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -73,7 +72,7 @@ public class Main {
       "South America",
       "Oceania",
       "Antarctica",
-      "Middle East"
+      "Middle East",
     };
     // use mustache notation to create an array for the image names
     String[] regionImages = {
@@ -84,10 +83,10 @@ public class Main {
       "southamerica.png",
       "oceania.png",
       "antarctica.png",
-      "middleeast.png"
+      "middleeast.png",
     };
     // Write a loop to create a region object for each region and store it in the array
-    for( String region : regionNames ) {
+    for (String region : regionNames) {
       regionsArray[rindex] = new Region(region, regionImages[rindex]);
       rindex++;
     }
@@ -229,7 +228,6 @@ public class Main {
           //switch to regions
           type = "region";
           showRegion();
-
         }
       }
     );
