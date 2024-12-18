@@ -1,8 +1,14 @@
-import java.awt.*;
-import java.awt.event.*;
-import java.io.*;
-import java.util.*;
-import javax.swing.*;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 public class Main {
 
@@ -59,11 +65,32 @@ public class Main {
 
   public void loadRegions() {
     // use mustache notation to create an array for the names of the regions
-
+    String[] regionNames = {
+      "Africa",
+      "Asia",
+      "Europe",
+      "North America",
+      "South America",
+      "Oceania",
+      "Antarctica",
+      "Middle East"
+    };
     // use mustache notation to create an array for the image names
-
+    String[] regionImages = {
+      "africa.png",
+      "asia.png",
+      "europe.png",
+      "northamerica.png",
+      "southamerica.png",
+      "oceania.png",
+      "antarctica.png",
+      "middleeast.png"
+    };
     // Write a loop to create a region object for each region and store it in the array
-
+    for( String region : regionNames ) {
+      regionsArray[rindex] = new Region(region, regionImages[rindex]);
+      rindex++;
+    }
   }
 
   /* showCountry() will show the image associated with the current country.
@@ -73,9 +100,9 @@ public class Main {
    */
   public void showCountry() {
     // Get the country at index from countryArray
-
+    Country country = countryArray[cindex];
     // Use its get method to get the its image file name and save it into imagefile variable below instead of worldmap.jpg.
-    String imagefile = "world.jpeg";
+    String imagefile = country.getImageFile();
     // Use the following code to create an new Image Icon and put it into the GUI
     img = new ImageIcon("images/" + imagefile);
     imageLabel.setIcon(img);
@@ -88,9 +115,9 @@ public class Main {
    */
   public void showRegion() {
     // Get the country at index from countryArray
-
+    Region region = regionsArray[rindex];
     // Use its get method to get the its image file name and save it into imagefile variable below instead of worldmap.jpg.
-    String imagefile = "world.jpeg";
+    String imagefile = region.getImage();
     img = new ImageIcon("images/" + imagefile);
     // create a label to display image
     imageLabel.setIcon(img);
@@ -100,7 +127,16 @@ public class Main {
    * call its toString() method and save the result, print it out with
    * System.out.println and as an argument to outputLabel.setText( text to print out );
    */
-  public void reviewButtonClick() {}
+  public void reviewButtonClick() {
+    // Get the country at index from countryArray
+    Country country = countryArray[cindex];
+    // Call its toString() method and save the result
+    String text = country.toString();
+    // print it out with System.out.println
+    System.out.println(text);
+    // and as an argument to outputLabel.setText( text to print out );
+    outputLabel.setText(text);
+  }
 
   /* quizButton should clear the outputLabel (outputLabel.setText to empty string),
    * get the country or region at index from their array, print out a question about it like
@@ -110,11 +146,30 @@ public class Main {
    */
   public void quizButtonClick() {
     Scanner scan = new Scanner(System.in);
+    // clear the outputLabel
+    outputLabel.setText("");
+    // Get the country at index from countryArray
+    Country country = countryArray[cindex];
+    // print out a question about it like What country is this?
+    System.out.println("What country is this?");
+    String answer = scan.nextLine();
   }
 
   public void newButtonClick() {
     //  incriment the index values make sure they do not go out of range
-
+    if (type.equals("country")) {
+      cindex++;
+      if (cindex >= countryArray.length) {
+        cindex = 0;
+      }
+      showCountry();
+    } else {
+      rindex++;
+      if (rindex >= regionsArray.length) {
+        rindex = 0;
+      }
+      showRegion();
+    }
   }
 
   public Main() {
@@ -172,6 +227,8 @@ public class Main {
       new ActionListener() {
         public void actionPerformed(ActionEvent e) {
           //switch to regions
+          type = "region";
+          showRegion();
 
         }
       }
@@ -181,7 +238,8 @@ public class Main {
       new ActionListener() {
         public void actionPerformed(ActionEvent e) {
           //switch to countries
-
+          type = "country";
+          showCountry();
         }
       }
     );

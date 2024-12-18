@@ -10,7 +10,12 @@ public class Region {
     this.image = image;
   }
   // Write accessor/get methods for each instance variable that returns it.
-
+  public String getName() {
+    return name;
+  }
+  public String getImage() {
+    return image;
+  }
   // Write a toString() method that returns a concatenated String of 3 of the instance
   // variables in a sentence like "The region is ..."
 
