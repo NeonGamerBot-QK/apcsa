@@ -82,7 +82,7 @@ public class Main {
       "asia-pacific.png",
       "middle-east.png",
       "central-america.png",
-      "north-america.png"
+      "north-america.png",
     };
     // Write a loop to create a region object for each region and store it in the array
     for (String region : regionNames) {
@@ -150,7 +150,7 @@ public class Main {
     outputLabel.setText("");
     // Get the country at index from countryArray
     Country country = countryArray[cindex];
-    // print out a question about it like What country is this? 
+    // print out a question about it like What country is this?
     System.out.println("What country is this?");
     // Get the user's answer using scan.nextLine()
     String answer = scan.nextLine();
