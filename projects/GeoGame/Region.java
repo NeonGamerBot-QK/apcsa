@@ -20,5 +20,8 @@ public class Region {
   }
   // Write a toString() method that returns a concatenated String of 3 of the instance
   // variables in a sentence like "The region is ..."
+  public String toString() {
+    return "The region is " + name + " and the image is " + image;
+  }
 
 }

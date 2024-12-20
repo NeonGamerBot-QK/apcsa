@@ -76,14 +76,13 @@ public class Main {
     };
     // use mustache notation to create an array for the image names
     String[] regionImages = {
-      "africa.png",
-      "asia.png",
+      "americas.png",
       "europe.png",
-      "northamerica.png",
-      "southamerica.png",
-      "oceania.png",
-      "antarctica.png",
-      "middleeast.png",
+      "south-america.png",
+      "asia-pacific.png",
+      "middle-east.png",
+      "central-america.png",
+      "north-america.png"
     };
     // Write a loop to create a region object for each region and store it in the array
     for (String region : regionNames) {
@@ -105,6 +104,7 @@ public class Main {
     // Use the following code to create an new Image Icon and put it into the GUI
     img = new ImageIcon("images/" + imagefile);
     imageLabel.setIcon(img);
+    outputLabel.setText(country.toString());
   }
 
   /* showRegion() will show the image associated with the current region.
@@ -120,6 +120,7 @@ public class Main {
     img = new ImageIcon("images/" + imagefile);
     // create a label to display image
     imageLabel.setIcon(img);
+    outputLabel.setText(region.toString());
   }
 
   /* reviewButton should get the country/region at index from the corresponding array,
@@ -149,9 +150,18 @@ public class Main {
     outputLabel.setText("");
     // Get the country at index from countryArray
     Country country = countryArray[cindex];
-    // print out a question about it like What country is this?
+    // print out a question about it like What country is this? 
     System.out.println("What country is this?");
+    // Get the user's answer using scan.nextLine()
     String answer = scan.nextLine();
+    // check if it is equal to the country's data using its get methods
+    if (answer.equals(country.getName())) {
+      // print out correct
+      System.out.println("Correct");
+    } else {
+      // print out incorrect
+      System.out.println("Incorrect");
+    }
   }
 
   public void newButtonClick() {
