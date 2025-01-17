@@ -1,0 +1,24 @@
+Required Features:
+
+Choose a Card Game: (5 points)
+Select a card game to implement
+Identify Classes
+Card Class: (10 points)
+Attributes: Suit (enum: Hearts, Diamonds, Spades, Clubs), Rank (enum: Ace, 2, 3, ..., Jack, Queen, King)
+Methods:
+toString() to represent the card (e.g., "Ace of Spades" or "AS")
+Deck Class: (10 points)
+Attributes: An ArrayList of Card objects
+Methods:
+shuffle() to randomize the order of cards in the deck
+deal() to distribute cards to players
+Player Class: (10 points)
+Attributes: Name, an ArrayList of Cards (hand)
+Methods:
+draw() to add a card to the player's hand
+discard() to remove a card from the player's hand
+showHand() to display the player's current hand
+Game Logic: (20 points)
+Implement the core gameplay mechanics of the chosen card game (e.g., War, Go Fish, Blackjack).
+Include clear rules and instructions for the game.
+Handle game states (e.g., player wins, game over).
