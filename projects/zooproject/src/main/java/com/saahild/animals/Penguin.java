@@ -4,15 +4,20 @@ import com.saahild.classes.Birds;
 
 public class Penguin extends Birds {
 
-  public Penguin() {
-    super(false);
-  }
+    public Penguin() {
+        super(false);
+    }
 
-  public void swim() {
-    System.out.println("Swimming swim emoji here");
-  }
+    public void swim() {
+        System.out.println("Swimming swim emoji here");
+    }
 
-  public void slide() {
-    System.out.println("Sliding away fifehrfneujrnbfejnrf");
-  }
+    public void slide() {
+        System.out.println("Sliding away fifehrfneujrnbfejnrf");
+    }
+
+    @Override
+    public String toString() {
+        return "Penguin{}";
+    }
 }
