@@ -37,24 +37,24 @@ public class Main {
         switch (move) {
           case "w":
           case "W":
-          System.out.println("W");
+            System.out.println("W");
             moved = moveUp(grid);
             break;
           case "a":
           case "A":
-          System.out.println("A");
+            System.out.println("A");
 
             moved = moveLeft(grid);
             break;
           case "s":
           case "S":
-          System.out.println("S");
+            System.out.println("S");
 
             moved = moveDown(grid);
             break;
           case "d":
           case "D":
-          System.out.println("D");
+            System.out.println("D");
 
             moved = moveRight(grid);
             break;
