@@ -35,16 +35,27 @@ public class Main {
         boolean moved = false;
 
         switch (move) {
+          case "w":
           case "W":
+          System.out.println("W");
             moved = moveUp(grid);
             break;
+          case "a":
           case "A":
+          System.out.println("A");
+
             moved = moveLeft(grid);
             break;
+          case "s":
           case "S":
+          System.out.println("S");
+
             moved = moveDown(grid);
             break;
+          case "d":
           case "D":
+          System.out.println("D");
+
             moved = moveRight(grid);
             break;
         }
@@ -169,7 +180,7 @@ public class Main {
     if (emptyCount == 0) return; // No empty space left
 
     int randPosition = (int) (Math.random() * emptyCount);
-    int value = (Math.random() < 0.9) ? 2 : 4; // 90% chance of 2, 10% chance of 4
+    int value = (Math.random() < 0.5) ? 2 : 4; // 90% chance of 2, 10% chance of 4
 
     int count = 0;
     for (int i = 0; i < SIZE; i++) {
