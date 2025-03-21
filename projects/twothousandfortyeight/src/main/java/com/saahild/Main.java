@@ -4,11 +4,15 @@ import java.util.Scanner;
 
 public class Main {
 
-  private static final int SIZE = 4;
+  private static int size = 4;
   private static final Scanner scanner = new Scanner(System.in);
 
   public static void main(String[] args) {
-    int[][] grid = new int[SIZE][SIZE];
+    System.out.println("Enter the initial grid size: ");
+    size = scanner.nextInt();
+    scanner.nextLine(); // Consume newline
+
+    int[][] grid = new int[size][size];
 
     // Place two initial tiles
     placeRandomTile(grid);
@@ -75,10 +79,10 @@ public class Main {
     // Game Over if no empty cells and no valid moves
     if (countEmptyCells(grid) > 0) return false;
 
-    for (int i = 0; i < SIZE; i++) {
-      for (int j = 0; j < SIZE; j++) {
-        if (i < SIZE - 1 && grid[i][j] == grid[i + 1][j]) return false;
-        if (j < SIZE - 1 && grid[i][j] == grid[i][j + 1]) return false;
+    for (int i = 0; i < size; i++) {
+      for (int j = 0; j < size; j++) {
+        if (i < size - 1 && grid[i][j] == grid[i + 1][j]) return false;
+        if (j < size - 1 && grid[i][j] == grid[i][j + 1]) return false;
       }
     }
     return true;
@@ -87,7 +91,7 @@ public class Main {
   // Move tiles in one direction and combine them
   private static boolean moveLeft(int[][] grid) {
     boolean moved = false;
-    for (int i = 0; i < SIZE; i++) {
+    for (int i = 0; i < size; i++) {
       moved |= slideAndMerge(grid[i]);
     }
     return moved;
@@ -103,7 +107,7 @@ public class Main {
 
   private static boolean moveRight(int[][] grid) {
     boolean moved = false;
-    for (int i = 0; i < SIZE; i++) {
+    for (int i = 0; i < size; i++) {
       reverseArray(grid[i]);
       moved |= slideAndMerge(grid[i]);
       reverseArray(grid[i]);
@@ -114,15 +118,15 @@ public class Main {
   private static boolean slideAndMerge(int[] row) {
     boolean moved = false;
     // Slide all non-zero values to the left
-    int[] newRow = new int[SIZE];
+    int[] newRow = new int[size];
     int index = 0;
-    for (int i = 0; i < SIZE; i++) {
+    for (int i = 0; i < size; i++) {
       if (row[i] != 0) {
         newRow[index++] = row[i];
       }
     }
     // Merge adjacent identical tiles
-    for (int i = 0; i < SIZE - 1; i++) {
+    for (int i = 0; i < size - 1; i++) {
       if (newRow[i] != 0 && newRow[i] == newRow[i + 1]) {
         newRow[i] *= 2;
         newRow[i + 1] = 0;
@@ -131,13 +135,13 @@ public class Main {
     }
     // Slide again after merge
     index = 0;
-    for (int i = 0; i < SIZE; i++) {
+    for (int i = 0; i < size; i++) {
       if (newRow[i] != 0) {
         row[index++] = newRow[i];
       }
     }
     // Fill the rest with zeros
-    for (int i = index; i < SIZE; i++) {
+    for (int i = index; i < size; i++) {
       row[i] = 0;
     }
     return moved;
@@ -145,13 +149,13 @@ public class Main {
 
   private static boolean moveUp(int[][] grid) {
     boolean moved = false;
-    for (int j = 0; j < SIZE; j++) {
-      int[] column = new int[SIZE];
-      for (int i = 0; i < SIZE; i++) {
+    for (int j = 0; j < size; j++) {
+      int[] column = new int[size];
+      for (int i = 0; i < size; i++) {
         column[i] = grid[i][j];
       }
       moved |= slideAndMerge(column);
-      for (int i = 0; i < SIZE; i++) {
+      for (int i = 0; i < size; i++) {
         grid[i][j] = column[i];
       }
     }
@@ -160,15 +164,15 @@ public class Main {
 
   private static boolean moveDown(int[][] grid) {
     boolean moved = false;
-    for (int j = 0; j < SIZE; j++) {
-      int[] column = new int[SIZE];
-      for (int i = 0; i < SIZE; i++) {
+    for (int j = 0; j < size; j++) {
+      int[] column = new int[size];
+      for (int i = 0; i < size; i++) {
         column[i] = grid[i][j];
       }
       reverseArray(column);
       moved |= slideAndMerge(column);
       reverseArray(column);
-      for (int i = 0; i < SIZE; i++) {
+      for (int i = 0; i < size; i++) {
         grid[i][j] = column[i];
       }
     }
@@ -183,8 +187,8 @@ public class Main {
     int value = (Math.random() < 0.5) ? 2 : 4; // 90% chance of 2, 10% chance of 4
 
     int count = 0;
-    for (int i = 0; i < SIZE; i++) {
-      for (int j = 0; j < SIZE; j++) {
+    for (int i = 0; i < size; i++) {
+      for (int j = 0; j < size; j++) {
         if (grid[i][j] == 0) {
           if (count == randPosition) {
             grid[i][j] = value;
@@ -214,5 +218,19 @@ public class Main {
       }
       System.out.println();
     }
+  }
+
+  private static int[][] expandGrid(int[][] grid) {
+    int newSize = size + 1;
+    int[][] newGrid = new int[newSize][newSize];
+
+    for (int i = 0; i < size; i++) {
+      for (int j = 0; j < size; j++) {
+        newGrid[i][j] = grid[i][j];
+      }
+    }
+
+    size = newSize;
+    return newGrid;
   }
 }
