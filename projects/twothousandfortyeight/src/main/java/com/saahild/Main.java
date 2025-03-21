@@ -38,7 +38,7 @@ public class Main {
       ) {
         boolean moved = false;
 
-        switch (move) {
+        switch (move.trim()) {
           case "w":
           case "W":
             System.out.println("W");
@@ -64,11 +64,11 @@ public class Main {
             break;
         }
 
-        if (moved) {
-          placeRandomTile(grid); // Place a new tile after move
-        } else {
-          System.out.println("Invalid move! Try again.");
-        }
+        // if (moved) {
+        // } else {
+        //   System.out.println("Invalid move! Try again.");
+        // }
+        placeRandomTile(grid); // Place a new tile after move
       } else {
         System.out.println("Invalid input! Use W, A, S, or D.");
       }
